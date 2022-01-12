@@ -40,8 +40,8 @@ public class Log {
 	public int getOccurrences() {
 		return this.occurrences;
 	}
-	public void setOccurrences(int ocorrencias) {
-		this.occurrences = ocorrencias;
+	public void setOccurrences(int occurrences) {
+		this.occurrences = occurrences;
 	}
 	public void newOcurrence(int occurrences) {
 		this.occurrences = this.occurrences + occurrences;

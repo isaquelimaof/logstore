@@ -2,14 +2,13 @@ package com.cingo.logstore;
 
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
-
 import com.cingo.logstore.entity.factory.LogFactory;
-import com.cingo.logstore.entity.factory.impl.DefaultLogFactory;
+import com.cingo.logstore.entity.factory.impl.*;
 import com.cingo.logstore.job.Job;
 import com.cingo.logstore.job.JobException;
 import com.cingo.logstore.job.impl.LogStoreJob;
-import com.cingo.logstore.logfile.LogWrapperFactory;
-import com.cingo.logstore.mapper.ObjectMapperProvider;
+import com.cingo.logstore.logfile.*;
+import com.cingo.logstore.mapper.*;
 import com.cingo.logstore.repostory.LogRepository;
 
 public class Application extends ResourceConfig {

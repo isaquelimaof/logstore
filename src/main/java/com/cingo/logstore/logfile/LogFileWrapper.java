@@ -15,7 +15,7 @@ public class LogFileWrapper implements LogWrapper {
 	private static String LAST_LINE;
 	private static int LAST_LINE_INDEX = 0;
 	
-	private File file;
+	private final File file;
 	
 	public LogFileWrapper(File file) {
 		super();
@@ -26,7 +26,7 @@ public class LogFileWrapper implements LogWrapper {
 		List<String> fileLines = new ArrayList<String>();
 		try (Stream<String> stream = Files.lines(Paths.get(this.file.getPath()))) {
 
-            stream.forEach(line -> fileLines.add(line));
+            stream.forEach(fileLines::add);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -37,12 +37,13 @@ public class LogFileWrapper implements LogWrapper {
 	
 	private List<String> mergeLogLines(List<String> fileLines) {
 		Map<Integer,String> lines = new HashMap<Integer, String>();
-		
+
 		fileLines.forEach(line -> {
 			if (line.indexOf("| ")>0) {
 				LAST_LINE_INDEX++;
-				lines.put(LAST_LINE_INDEX, line.substring(line.indexOf("| ")+2));
-				LAST_LINE = line.substring(line.indexOf("| ")+2);
+				String substring = line.substring(line.indexOf("| ") + 2);
+				lines.put(LAST_LINE_INDEX, substring);
+				LAST_LINE = substring;
 			} else {
 				lines.put(LAST_LINE_INDEX, LAST_LINE+"\n"+line);
 				LAST_LINE = LAST_LINE+"\n"+line;

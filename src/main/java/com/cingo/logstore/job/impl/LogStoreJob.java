@@ -3,16 +3,15 @@ package com.cingo.logstore.job.impl;
 import com.cingo.logstore.entity.factory.LogFactory;
 import com.cingo.logstore.job.Job;
 import com.cingo.logstore.job.JobException;
-import com.cingo.logstore.logfile.LogWrapperBuildException;
-import com.cingo.logstore.logfile.LogWrapperFactory;
+import com.cingo.logstore.logfile.*;
 import com.cingo.logstore.repostory.LogRepository;
 
 public class LogStoreJob implements Job {
 
 	private static final int DEFAULT_INITIAL_OCCURRENCES = 1;
-	private LogWrapperFactory logWrapperFactory;
-	private LogFactory logFactory;
-	private LogRepository logRepository;
+	private final LogWrapperFactory logWrapperFactory;
+	private final LogFactory logFactory;
+	private final LogRepository logRepository;
 	
 	public LogStoreJob(LogWrapperFactory logWrapperFactory, LogRepository logRepository, LogFactory logFactory) {
 		this.logWrapperFactory = logWrapperFactory;

@@ -1,6 +1,6 @@
 package com.cingo.logstore.entity.factory;
 
-import com.cingo.logstore.entity.Log;
+import com.cingo.logstore.entity.*;
 
 public interface LogFactory {
 	

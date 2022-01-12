@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="6935c3a2-c75d-47d0-b248-770f3acb3805" name="logstore" url="jdbc:postgresql://localhost/logstore" driverClass="org.postgresql.Driver" />
+    </data-sources>
+  </component>
+</project>

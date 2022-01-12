@@ -6,6 +6,6 @@ public class JobException extends Exception {
 	private static final String MESSAGE = "System cannot run the job called ";
 
 	public JobException(String jobName, Throwable cause) {
-		super(new StringBuilder().append(MESSAGE).append(jobName).toString(), cause);
+		super(MESSAGE + jobName, cause);
 	}
 }

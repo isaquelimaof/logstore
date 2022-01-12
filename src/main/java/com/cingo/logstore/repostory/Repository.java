@@ -1,8 +1,8 @@
 package com.cingo.logstore.repostory;
 
-import javax.persistence.EntityManager;
+import com.cingo.logstore.jpa.*;
 
-import com.cingo.logstore.jpa.LogStoreEntityManagerFactory;
+import javax.persistence.EntityManager;
 
 public class Repository {
 
